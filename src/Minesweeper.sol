@@ -131,6 +131,8 @@ contract Minesweeper is IMinesweeper, ReentrancyGuard, Pausable, Ownable,VRFCons
 
         _handleOutGoingFund(msg.sender, forPlayer);
         _handleOutGoingFund(beneficiary, forBeneficiary);
+
+        turns[msg.sender] = turns[msg.sender] - 1;
     }
     function _handleShuffle(uint _seed) private {
         for (uint i = 0; i < awards.length; i++) {

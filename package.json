@@ -2,7 +2,8 @@
   "name": "hardhat-project",
   "scripts": {
     "compile": "yarn cache clean && npx hardhat compile",
-    "test": "yarn compile && npx hardhat test"
+    "test": "yarn compile && npx hardhat test",
+    "deploy_bsc_testnet": "yarn compile && npx hardhat run --network bsc_testnet scripts/deploy.ts"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",

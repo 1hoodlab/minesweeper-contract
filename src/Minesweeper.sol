@@ -74,7 +74,7 @@ contract Minesweeper is IMinesweeper, ReentrancyGuard, Pausable, Ownable,VRFCons
         uint _amount = numberOfTurns * priceOfTurn;
         require(_amount != 0, "E0"); // E0: Not zero
         _handleIncomingFund(_amount);
-        turns[msg.sender] = numberOfTurns;
+        turns[msg.sender] = turns[msg.sender] + numberOfTurns;
         emit BuyTurn(msg.sender, numberOfTurns);
     }
 

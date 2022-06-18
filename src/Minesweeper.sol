@@ -164,7 +164,7 @@ contract Minesweeper is
         } else if (awards[key] == 5) {
             turns[msg.sender] = turns[msg.sender] - 1;
         } else {
-            uint256 award = (awards[key] * address(this).balance) / 100;
+            uint256 award = (awards[key] * address(this).balance) / 10; // 10%, 20%, 30%, 40%
             uint256 forBeneficiary = (award * fee) / 100;
             uint256 forPlayer = award - forBeneficiary;
 
